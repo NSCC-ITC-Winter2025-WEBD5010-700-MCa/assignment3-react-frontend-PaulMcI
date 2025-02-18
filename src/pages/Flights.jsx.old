@@ -1,0 +1,36 @@
+import { useEffect, useState } from "react";
+import FlightsTable from "../components/FlightsTable";
+
+const Flights = () => {
+
+    // the component will not refresh if state is not changed
+    const [number, setNumber] = useState(0);
+    const [flights, setFlights] = useState([]);
+
+    useEffect(() => {
+        console.log('Hello from useEffect: ' + number)
+    }, [number]);
+
+    useEffect(() => {
+        console.log("Fetching Data");
+        const fetchData = async () => {
+            const response = await fetch('http://localhost:3456/flights/');
+            const data = await response.json();
+            //console.log(data);
+            setFlights(data);
+        }  
+        
+        fetchData();
+    }, []);
+
+    return (
+      <div>
+        <h1 className="text-2xl font-bold">Flights</h1>
+        <p onClick={() => { setNumber(Math.random())}}>Manage flights here.</p>
+        <FlightsTable flights={flights}></FlightsTable>
+      </div>
+    );
+  };
+  
+  export default Flights;
+  
