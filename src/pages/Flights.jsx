@@ -5,7 +5,8 @@ import {
     QueryClient,
     QueryClientProvider,
 } from '@tanstack/react-query'
-import FlightsTable from "../components/FlightsTable";
+import FlightsTable from "../components/flights/FlightsTable";
+import { Outlet } from 'react-router-dom';
 
 //  https://tanstack.com/query/v4/docs/framework/react/reference/useMutation
 
@@ -17,13 +18,15 @@ const Flights = () => {
             console.log("Fetching data");
             const response = await fetch("http://localhost:3456/flights");
             return response.json(); // returns a promise of our data
-        }
+        },
+        //staleTime: Infinity
     });
 
     if (error) return <div>{`An error has occurred: ${error.message}`}</div>
 
     return (
         <div>
+            <Outlet />
             <h1 className="text-2xl font-bold">Flights</h1>
             {
                 isPending ?

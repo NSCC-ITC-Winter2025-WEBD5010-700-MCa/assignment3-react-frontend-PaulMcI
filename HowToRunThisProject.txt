@@ -1,0 +1,28 @@
+Full Stack Client-Admin-Flights App
+C:\Repo\FullStack\ClientStarter
+
+for books in the ClientStarter-BooksFlights testing App
+launch in separate terminals: Vte and json-server !!!!
+- launch the books server with:   
+	- json-server books.json
+- launch the ClientStarter-BooksFlight React App:
+	- npm run dev
+
+- start Docker (not showing on screen, working anyway???)
+- start Compass
+	- db
+	- use.nasa_shuttle_flights
+	- db.flights.find()
+	
+- start the Nest.js API   --->  C:\Repo\FullStack\Assignment2_Redo
+	- at Terminal change directory/cd into "_Phase1\full-stack-assign2\src"
+	- npm start main
+	
+	- I have modified main.ts:
+		const app = await NestFactory.create(AppModule, { cors: true });			
+		await app.listen(process.env.PORT ?? 3456);
+- check Postman at:  http://localhost:3456/flights
+	- note the port# change !!!!
+- start the ClientAdmin React App
+	- npm run dev
+	- React is running at http://localhost:5173/admin

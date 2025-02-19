@@ -8,6 +8,8 @@ import Customers from '../pages/Customers';
 import Subscriptions from '../pages/Subscriptions';
 import Books from '../pages/books';
 import Flights from '../pages/Flights';
+import BookCreate from '../components/books/BookCreate';
+import FlightCreate from '../components/flights/FlightCreate';
 
 
 // react router maps locations in browser to displays of components
@@ -49,10 +51,22 @@ const router = createBrowserRouter([
       {
         path: 'books',
         element: <Books />,
+        children: [
+          {
+            path: "create",
+            element: <BookCreate />
+          }
+        ]
       },      
       {
         path: 'flights',
         element: <Flights />,
+        children: [
+          {
+            path: "create",
+            element: <FlightCreate />
+          }
+        ]        
       },        
     ],
   },
