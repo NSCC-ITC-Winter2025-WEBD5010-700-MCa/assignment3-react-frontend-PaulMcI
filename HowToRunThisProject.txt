@@ -1,5 +1,8 @@
-Full Stack Client-Admin-Flights App
-C:\Repo\FullStack\ClientStarter
+Full Stack Client-Admin-Flights-Books App
+In VSCode Open Folder:
+
+C:\Repo\FullStack\FrontEndUI\assignment3-react-frontend-PaulMcI
+(originally located in: C:\Repo\FullStack\ClientStarter)
 
 for books in the ClientStarter-BooksFlights testing App
 launch in separate terminals: Vte and json-server !!!!
@@ -8,10 +11,11 @@ launch in separate terminals: Vte and json-server !!!!
 - launch the ClientStarter-BooksFlight React App:
 	- npm run dev
 
-- start Docker (not showing on screen, working anyway???)
+FOR FLIGHTS NEST API HITTING MONGODB 
+- start Docker
 - start Compass
 	- db
-	- use.nasa_shuttle_flights
+	- use nasa_shuttle_flights
 	- db.flights.find()
 	
 - start the Nest.js API   --->  C:\Repo\FullStack\Assignment2_Redo
@@ -26,3 +30,16 @@ launch in separate terminals: Vte and json-server !!!!
 - start the ClientAdmin React App
 	- npm run dev
 	- React is running at http://localhost:5173/admin
+
+Tuesday Feb.18
+FlightCreate - added FlightCreate.jsx (returns only text at this point)
+			- added child element: <FlightCreate /> to the AppRoute.jsx
+			- added <Link to="/admin/flights/create">Add New Flight</Link> link to FlightsTable.jsx
+			- added <Outlet /> to /pages/Flights.jsx  (import { Outlet } from 'react-router-dom';)
+
+https://react-hook-form.com/form-builder
+
+Forms
+
+npm install react-hook-form
+
