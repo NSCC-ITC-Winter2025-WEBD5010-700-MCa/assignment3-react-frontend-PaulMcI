@@ -2095,6 +2095,13 @@
       "author": "Tolkien",
       "published_year": "1935",
       "genre": "Fantasy"
+    },
+    {
+      "id": "3c24",
+      "title": "Slaughter House Five",
+      "author": "Kurt Vonnegut",
+      "published_year": "1960",
+      "genre": "Fiction"
     }
   ]
 }

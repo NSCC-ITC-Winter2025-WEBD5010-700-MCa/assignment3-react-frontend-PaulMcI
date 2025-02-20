@@ -41,5 +41,12 @@ https://react-hook-form.com/form-builder
 
 Forms
 
+To kill the Flight API process:  npx kill-port 3456
+
 npm install react-hook-form
+
+To enable creating flights from the React UI I disabled most of the validation in the API's DTO here:
+
+C:\Repo\FullStack\Assignment2_Redo\assignment2-restapi-PaulMcI\
+	_Phase1\full-stack-assign2\src\flights\dto\create-flight.dto.ts
 

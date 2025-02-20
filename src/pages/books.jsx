@@ -13,9 +13,8 @@ import { Outlet, useLocation } from 'react-router-dom';
 const Books = () => {
 
     // get the current location information
-    const location = useLocation()
-
-    console.log(location.pathname);
+    const location = useLocation();
+    //console.log(location.pathname);
 
     const { isPending, error, data: books } = useQuery({
         queryKey: ["booksData"],
