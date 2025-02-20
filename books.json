@@ -178,48 +178,6 @@
       }
     },
     {
-      "id": "5",
-      "title": "Secrets of the Forest",
-      "author": "Thomas King",
-      "published_year": 1965,
-      "genre": "Mystery",
-      "isbn": "6702732680751",
-      "ratings": [
-        3,
-        5
-      ],
-      "reviews": [
-        {
-          "user": "Patricia Cooper",
-          "comment": "This is a review for Journey to the Unknown.",
-          "rating": 5,
-          "date": "6-5-2022"
-        },
-        {
-          "user": "Deborah Wright",
-          "comment": "This is a review for The Flame of Courage.",
-          "rating": 5,
-          "date": "18-10-2021"
-        }
-      ],
-      "publisher": {
-        "name": "HarperCollins",
-        "address": {
-          "street": "521 Oak Ave",
-          "city": "Paris",
-          "country": "France"
-        },
-        "contact": {
-          "phone": "+1-988-9207963",
-          "email": "contact@hachette.com"
-        }
-      },
-      "price": {
-        "currency": "EUR",
-        "amount": 48.9
-      }
-    },
-    {
       "id": "6",
       "title": "Lost in the Abyss",
       "author": "Thomas King",
@@ -2102,6 +2060,13 @@
       "author": "Kurt Vonnegut",
       "published_year": "1960",
       "genre": "Fiction"
+    },
+    {
+      "id": "b7b7",
+      "title": "test",
+      "author": "test",
+      "published_year": "5555",
+      "genre": "test"
     }
   ]
 }

@@ -8,6 +8,12 @@ function BookCreate() {
     const queryClient = useQueryClient();
     const navigate = useNavigate();
 
+    const collectData = (data) => {
+
+        console.log(data);
+        createBookMutation.mutate(data);
+    }
+
     // const collectData = (data) => {
     //     // console.log(data);
     //     createBookMutation.mutate(data);
@@ -29,16 +35,83 @@ function BookCreate() {
     });
 
     return (
+
+
+<div className="max-w-lg mx-auto bg-white shadow-md rounded-lg p-6">
+      <h2 className="text-2xl font-bold mb-4 text-gray-800">Create New Book</h2>
+      <form onSubmit={handleSubmit(collectData)} className="space-y-4">
         <div>
-            <h2>Create New Book</h2>
-            <form onSubmit={handleSubmit(createBookMutation.mutate)}>
-                <input {...register("title", { required: "Title is required!" })} type="text" placeholder="Title"></input><br />
-                <input {...register("author")} type="text" placeholder="Author"></input><br />
-                <input {...register("published_year")} type="text" placeholder="Year"></input><br />
-                <input {...register("genre")} type="text" placeholder="Genre"></input><br />
-                <button type="submit">Create Book</button>
-            </form>
+          <input
+            {...register('title', { required: 'Title is required!' } )}
+            type="text"
+            placeholder="Title"
+            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          {errors.title && <p className="text-red-500 text-sm mt-1">{errors.title.message}</p>}
         </div>
+        <div>
+          <input
+            {...register('author', { required: 'Author is required!' })}
+            type="text"
+            placeholder="Author"
+            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          {errors.author && <p className="text-red-500 text-sm mt-1">{errors.author.message}</p>}
+        </div>
+        <div>
+          <input
+            {...register('published_year', { required: 'Year is required!', min: { value: 1700, message: 'Year must be greater than 1700'} })}
+            type="number"
+            placeholder="Year"
+            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          {errors.published_year && <p className="text-red-500 text-sm mt-1">{errors.published_year.message}</p>}
+        </div>
+        <div>
+          <input
+            {...register('genre', { required: 'Genre is required!' })}
+            type="text"
+            placeholder="Genre"
+            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          {errors.genre && <p className="text-red-500 text-sm mt-1">{errors.genre.message}</p>}
+        </div>
+        <button
+          type="submit"
+          className="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-all"
+        >
+          Create Book
+        </button>
+      </form>
+    </div>
+
+
+        // <div>
+        //     <h2>Create New Book</h2>
+        //     <form onSubmit={handleSubmit(collectData)}>
+        //         <input {...register("title", { required: "Title is required!" })} type="text" placeholder="Title"
+        //         className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></input>
+        //         <br />
+        //         {errors.title && <p role="alert">{errors.title?.message}</p>}
+                
+        //         <input {...register("author", { required: "Author is required!" })} type="text" placeholder="Author"
+        //         className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></input>
+        //         <br />
+        //         {errors.author && <p role="alert">{errors.author?.message}</p>}
+                
+        //         <input {...register("published_year", { required: "Published year is required!" })} type="number" 
+        //         placeholder="Year" className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></input>
+        //         <br />
+        //         {errors.published_year && <p role="alert">{errors.published_year?.message}</p>}
+                
+        //         <input {...register("genre", { required: "Genre is required!" })} type="text" placeholder="Genre"
+        //         className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></input>
+        //         <br />
+        //         {errors.genre && <p role="alert">{errors.genre?.message}</p>}
+                
+        //         <button type="submit">Create Book</button>
+        //     </form>
+        // </div>
     )
 }
 

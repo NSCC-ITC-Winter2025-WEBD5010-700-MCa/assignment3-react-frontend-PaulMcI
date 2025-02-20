@@ -30,6 +30,7 @@ FOR FLIGHTS NEST API HITTING MONGODB
 - start the ClientAdmin React App
 	- npm run dev
 	- React is running at http://localhost:5173/admin
+	http://localhost:5176/
 
 Tuesday Feb.18
 FlightCreate - added FlightCreate.jsx (returns only text at this point)
