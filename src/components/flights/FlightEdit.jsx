@@ -1,39 +1,39 @@
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { useNavigate } from "react-router-dom";
 
-function FlightCreate() {
+function FlightEdit() {
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
-    const queryClient = useQueryClient();
-    const navigate = useNavigate();
+    const { id } = useParams();
+    const { register, handleSubmit, formState: { errors }, setValue } = useForm();
 
-    const collectData = (data) => {
-
-        console.log(data);
-        createFlightMutation.mutate(data);
-    }    
-
-    const createFlightMutation = useMutation({
-        mutationFn: async (data) => {
-            const response = await fetch("http://localhost:3456/flights", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(data)
-            });
+    const { isPending, error, data } = useQuery({
+        queryKey: ["flight", id],
+        queryFn: async () => {
+            const response = await fetch(`http://localhost:3456/flights/${id}`);
+            // console.log( response.json());
             return response.json();
-        },
-        onSuccess: () => {
-            queryClient.invalidateQueries(["flightsData"]);
-            navigate("/admin/flights");
-        },
+        }
     });
+
+    useEffect(() => {
+        console.log(data);
+        if (data) {
+            // pre-populate the form with the data
+            setValue('mission', data.mission);
+            setValue('mission_type', data.mission_type);
+            setValue('spacecraft', data.spacecraft);
+            setValue('launch_date', data.launch_date);
+            setValue('orbits_completed', data.orbits_completed);
+        }
+    }, [data]);
 
     return (
 
         <div className="max-w-lg mx-auto bg-white shadow-md rounded-lg p-6">
-            <h2 className="text-2xl font-bold mb-4 text-gray-800">Create New Flight</h2>
-            <form onSubmit={handleSubmit(collectData)} className="space-y-4">
+            <h2 className="text-2xl font-bold mb-4 text-gray-800">Edit Flight Mission: {data?.mission}</h2>
+            <form className="space-y-4">
                 <div>
                     <input
                         {...register('mission', { required: 'Mission is required!' })}
@@ -77,12 +77,12 @@ function FlightCreate() {
                 <button
                     type="submit"
                     className="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-all">
-                    Create Flight
+                    Submit Flight Edits
                 </button>
             </form>
         </div>
 
-    )
+    );
 }
 
-export default FlightCreate;
+export default FlightEdit;

@@ -11,6 +11,7 @@ import Flights from '../pages/Flights';
 import BookCreate from '../components/books/BookCreate';
 import BookEdit from '../components/books/BookEdit';
 import FlightCreate from '../components/flights/FlightCreate';
+import FlightEdit from '../components/flights/FlightEdit';
 
 
 // react router maps locations in browser to displays of components
@@ -70,7 +71,11 @@ const router = createBrowserRouter([
           {
             path: "create",
             element: <FlightCreate />
-          }
+          },
+          {
+            path: ":id/edit",
+            element: <FlightEdit />
+          }          
         ]        
       },        
     ],
