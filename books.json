@@ -1987,20 +1987,6 @@
       "author": "test",
       "published_year": "5555",
       "genre": "test"
-    },
-    {
-      "id": "8855",
-      "title": "test",
-      "author": "asdfasdf",
-      "published_year": "3212",
-      "genre": "Dystopian Sci Fi"
-    },
-    {
-      "id": "f175",
-      "title": "Dunlop Tires",
-      "author": "Michelin Man",
-      "published_year": "2550",
-      "genre": "Vulcan"
     }
   ]
 }

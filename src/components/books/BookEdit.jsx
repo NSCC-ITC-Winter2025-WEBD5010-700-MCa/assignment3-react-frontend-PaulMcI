@@ -14,7 +14,7 @@ function BookEdit() {
   const { isPending, error, data } = useQuery({
     queryKey: ["book", id],
     queryFn: async () => {
-      const response = await fetch(`http://localhost:3000/books/${id}`);
+      const response = await fetch(`${ import.meta.env.VITE_BOOKS_API_URL }/${id}`);
       // console.log( response.json());
       return response.json();
     }
@@ -22,7 +22,7 @@ function BookEdit() {
 
   const editBookMutation = useMutation({
     mutationFn: async (data) => {
-      const response = await fetch(`http://localhost:3000/books/${id}`, {
+      const response = await fetch(`${ import.meta.env.VITE_BOOKS_API_URL }/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'

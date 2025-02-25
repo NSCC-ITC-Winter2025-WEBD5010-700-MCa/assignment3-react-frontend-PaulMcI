@@ -1,19 +1,24 @@
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 
 export default function BookForm({ onDataCollected, initialData }) {
 
     const { register, handleSubmit, formState: { errors }, setValue } = useForm();
 
-    if(initialData) {
+    // what is useEffect?       
+    // useEffect is a hook that allows you to perform side effects in function components
+    // useEffect runs after the first render and after every update 
+    useEffect(() => {
+        if (initialData) {
             // pre-populate the form with the data
             setValue('title', initialData.title);
             setValue('author', initialData.author);
             setValue('published_year', initialData.published_year);
             setValue('genre', initialData.genre);
-    }
+        }
+    }, [initialData]);
 
     return (
-
         <form onSubmit={handleSubmit(onDataCollected)} className="space-y-4">
             <div>
                 <input

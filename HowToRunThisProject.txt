@@ -51,3 +51,21 @@ To enable creating flights from the React UI I disabled most of the validation i
 C:\Repo\FullStack\Assignment2_Redo\assignment2-restapi-PaulMcI\
 	_Phase1\full-stack-assign2\src\flights\dto\create-flight.dto.ts
 
+-------------------------------------------------------build process
+npm run build 
+
+can delete the dist folder and recreate with npm run build
+
+PS C:\Repo\FullStack\FrontEndUI\assignment3-react-frontend-PaulMcI> npm run build
+
+> clientstarter@0.0.0 build
+> vite build
+
+vite v6.1.0 building for production...
+✓ 111 modules transformed.
+dist/index.html                   0.46 kB │ gzip:   0.29 kB
+dist/assets/index-uzoePdAz.css   28.47 kB │ gzip:   7.25 kB
+dist/assets/index-BoEnalJo.js   364.97 kB │ gzip: 117.06 kB
+✓ built in 1.86s
+PS C:\Repo\FullStack\FrontEndUI\assignment3-react-frontend-PaulMcI> npm run build
+
