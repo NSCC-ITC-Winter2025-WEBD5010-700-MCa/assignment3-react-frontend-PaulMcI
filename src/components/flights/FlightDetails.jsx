@@ -11,7 +11,8 @@ function FlightDetails() {
     const { isPending, error, data } = useQuery({
         queryKey: ["flight", id],
         queryFn: async () => {
-            const response = await fetch(`http://localhost:3456/flights/${id}`);
+            //const response = await fetch(`http://localhost:3456/flights/${id}`);
+            const response = await fetch(`${import.meta.env.VITE_FLIGHTS_API_URL}/${id}`);
             // console.log( response.json());
             return response.json();
         }
