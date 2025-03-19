@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useQuery, useMutation, useQueryClient} from "@tanstack/react-query";
-import { useForm } from "react-hook-form";
+// import { useForm } from "react-hook-form";
 import BookForm from "./BookForm";
 
 function BookEdit() {
 
   const { id } = useParams();
-  const { register, handleSubmit, formState: { errors }, setValue } = useForm();
+  // const { register, handleSubmit, formState: { errors }, setValue } = useForm();
   const navigate = useNavigate();
   const queryClient = useQueryClient();
 
@@ -41,14 +41,14 @@ function BookEdit() {
   // useEffect reacts to a particular state change and runs a function
   // useEffects run on render and every update
   useEffect(() => {
-    console.log(data);
-    if (data) {
-      // // pre-populate the form with the data
-      // setValue('title', data.title);
-      // setValue('author', data.author);
-      // setValue('published_year', data.published_year);
-      // setValue('genre', data.genre);
-    }
+    //console.log(data);
+    // if (data) {
+    //   // // pre-populate the form with the data
+    //   // setValue('title', data.title);
+    //   // setValue('author', data.author);
+    //   // setValue('published_year', data.published_year);
+    //   // setValue('genre', data.genre);
+    // }
   }, [data]);
 
   const processData = (data) => {
@@ -59,7 +59,7 @@ function BookEdit() {
   return (
     <div className="max-w-lg mx-auto bg-white shadow-md rounded-lg p-6">
       <h2 className="text-2xl font-bold mb-4 text-gray-800">Edit Book - Id: {data?.id}</h2>
-      <BookForm onDataCollected={processData} initialDate={data} />
+      <BookForm onDataCollected={processData} initialData={data} />
     </div>
   );
 }

@@ -1,3 +1,10 @@
+Winter2025-WEBD5010
+Class Recordings
+
+Brightspace Assignment Link
+https://nscconline.brightspace.com/d2l/lms/dropbox/user/folder_submit_files.d2l?db=555475&grpid=0&isprv=0&bp=0&ou=332784
+
+
 Full Stack Client-Admin-Flights-Books App
 In VSCode Open Folder:
 
@@ -68,4 +75,94 @@ dist/assets/index-uzoePdAz.css   28.47 kB │ gzip:   7.25 kB
 dist/assets/index-BoEnalJo.js   364.97 kB │ gzip: 117.06 kB
 ✓ built in 1.86s
 PS C:\Repo\FullStack\FrontEndUI\assignment3-react-frontend-PaulMcI> npm run build
+
+------------------------------------
+deploy front end on 
+https://app.netlify.com/signup/start/connect/NSCC-ITC-Winter2025-WEBD5010-700-MCa/repos
+
+back end on 
+https://render.com/        (?)
+
+
+
+____________________________________________________________________________________
+
+
+Full Stack Client-Admin-Flights-Books App
+In VSCode Open Folder:
+
+C:\Repo\FullStack\FrontEndUI\assignment3-react-frontend-PaulMcI
+(originally located in: C:\Repo\FullStack\ClientStarter)
+
+for books in the ClientStarter-BooksFlights testing App
+launch in separate terminals: Vte and json-server !!!!
+- launch the books server with:   
+	- json-server books.json
+- launch the ClientStarter-BooksFlight React App:
+	- npm run dev
+
+FOR FLIGHTS NEST API HITTING MONGODB 
+- start Docker
+- start Compass
+	- db
+	- use nasa_shuttle_flights
+	- db.flights.find()
+	
+- start the Nest.js API   --->  C:\Repo\FullStack\Assignment2_Redo
+	- at Terminal change directory/cd into "_Phase1\full-stack-assign2\src"
+	- npm start main
+	
+	- I have modified main.ts:
+		const app = await NestFactory.create(AppModule, { cors: true });			
+		await app.listen(process.env.PORT ?? 3456)
+- check Postman at:  http://localhost:3456/flights
+	- note the port# change !!!!
+- start the ClientAdmin React App
+	- npm run dev
+	- React is running at http://localhost:5173/admin
+	http://localhost:5176/
+
+Tuesday Feb.18
+FlightCreate - added FlightCreate.jsx (returns only text at this point)
+			- added child element: <FlightCreate /> to the AppRoute.jsx
+			- added <Link to="/admin/flights/create">Add New Flight</Link> link to FlightsTable.jsx
+			- added <Outlet /> to /pages/Flights.jsx  (import { Outlet } from 'react-router-dom';)
+
+https://react-hook-form.com/form-builder
+
+Forms
+
+To kill the Flight API process:  npx kill-port 3456
+
+npm install react-hook-form
+
+To enable creating flights from the React UI I disabled most of the validation in the API's DTO here:
+
+C:\Repo\FullStack\Assignment2_Redo\assignment2-restapi-PaulMcI\
+	_Phase1\full-stack-assign2\src\flights\dto\create-flight.dto.ts
+
+-------------------------------------------------------build process
+npm run build 
+
+can delete the dist folder and recreate with npm run build
+
+PS C:\Repo\FullStack\FrontEndUI\assignment3-react-frontend-PaulMcI> npm run build
+
+> clientstarter@0.0.0 build
+> vite build
+
+vite v6.1.0 building for production...
+✓ 111 modules transformed.
+dist/index.html                   0.46 kB │ gzip:   0.29 kB
+dist/assets/index-uzoePdAz.css   28.47 kB │ gzip:   7.25 kB
+dist/assets/index-BoEnalJo.js   364.97 kB │ gzip: 117.06 kB
+✓ built in 1.86s
+PS C:\Repo\FullStack\FrontEndUI\assignment3-react-frontend-PaulMcI> npm run build
+
+------------------------------------
+deploy front end on 
+https://app.netlify.com/signup/start/connect/NSCC-ITC-Winter2025-WEBD5010-700-MCa/repos
+
+back end on 
+https://render.com/        (?)
 

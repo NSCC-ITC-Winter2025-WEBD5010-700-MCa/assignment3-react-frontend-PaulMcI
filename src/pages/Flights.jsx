@@ -20,7 +20,8 @@ const Flights = () => {
         queryKey: ["flightsData"],
         queryFn: async () => {
             console.log("Fetching data");
-            const response = await fetch("http://localhost:3456/flights");
+            //const response = await fetch("http://localhost:3456/flights");
+            const response = await fetch(`${import.meta.env.VITE_FLIGHTS_API_URL}`);
             return response.json(); // returns a promise of our data
         },
         staleTime: Infinity

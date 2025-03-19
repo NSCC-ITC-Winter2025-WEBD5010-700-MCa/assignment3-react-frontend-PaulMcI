@@ -55,7 +55,7 @@ function FlightsTable({ flights }) {
                                     <td className="border border-gray-300 px-4 py-2">{flight.spacecraft}</td>
                                     <td className="border border-gray-300 px-4 py-2">{flight.launch_date}</td>
                                     <td className="border border-gray-300 px-4 py-2 text-center space-x-1">
-                                        <button className="bg-green-500 text-white px-2 py-1 text-sm rounded hover:bg-green-600">Details</button>                                        
+                                        <button onClick={ () => navigate(`/admin/flights/${flight._id}/details`) } className="bg-green-500 text-white px-2 py-1 text-sm rounded hover:bg-green-600">Details</button>                                        
                                         <button onClick={ () => navigate(`/admin/flights/${flight._id}/edit`) } className="bg-blue-500 text-white px-2 py-1 text-sm rounded hover:bg-blue-600">Edit</button>
                                         <button onClick={() => (handleDelete(flight._id))} className="bg-red-500 text-white px-2 py-1 text-sm rounded hover:bg-red-600">Delete</button>
                                     </td>

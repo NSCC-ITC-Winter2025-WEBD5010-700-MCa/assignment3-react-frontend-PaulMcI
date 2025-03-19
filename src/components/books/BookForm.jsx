@@ -5,10 +5,17 @@ export default function BookForm({ onDataCollected, initialData }) {
 
     const { register, handleSubmit, formState: { errors }, setValue } = useForm();
 
+    // const { register, handleSubmit, formState: { errors }, setValue } = useForm({
+    //     defaultValues: initialData || {}
+    // });
+
+
     // what is useEffect?       
     // useEffect is a hook that allows you to perform side effects in function components
     // useEffect runs after the first render and after every update 
-    useEffect(() => {
+
+    useEffect(() => {   // this only runs during initial renders of the form
+        console.log('Use effect ran: ', initialData)
         if (initialData) {
             // pre-populate the form with the data
             setValue('title', initialData.title);

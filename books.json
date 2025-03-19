@@ -137,40 +137,11 @@
       }
     },
     {
-      "id": "7",
       "title": "In the Heart of the Storm",
       "author": "Michael Brown",
       "published_year": 1971,
       "genre": "Thriller",
-      "isbn": "8562232556610",
-      "ratings": [
-        2,
-        5
-      ],
-      "reviews": [
-        {
-          "user": "Mary Collins",
-          "comment": "This is a review for The Black Horizon.",
-          "rating": 5,
-          "date": "18-7-2023"
-        }
-      ],
-      "publisher": {
-        "name": "Simon & Schuster",
-        "address": {
-          "street": "521 Broadway",
-          "city": "Berlin",
-          "country": "UK"
-        },
-        "contact": {
-          "phone": "+1-899-4773655",
-          "email": "contact@hachette.com"
-        }
-      },
-      "price": {
-        "currency": "EUR",
-        "amount": 13.59
-      }
+      "id": "7"
     },
     {
       "id": "8",
@@ -1975,17 +1946,24 @@
       "genre": "Fantasy"
     },
     {
-      "id": "3c24",
-      "title": "Slaughter House Five",
+      "title": "Slaughter House ASDF",
       "author": "Kurt Vonnegut",
       "published_year": "1960",
-      "genre": "Fiction"
+      "genre": "Fiction",
+      "id": "3c24"
     },
     {
       "id": "b7b7",
       "title": "test",
       "author": "test",
       "published_year": "5555",
+      "genre": "test"
+    },
+    {
+      "id": "00a4",
+      "title": "TEst",
+      "author": "test",
+      "published_year": "2003",
       "genre": "test"
     }
   ]
