@@ -42,6 +42,7 @@ function FlightsTable({ flights }) {
                         <th className="border border-gray-300 px-4 py-2 text-left">Mission Type</th>
                         <th className="border border-gray-300 px-4 py-2 text-left">Spacecraft</th>
                         <th className="border border-gray-300 px-4 py-2 text-left">Launch Date</th>
+                        <th className="border border-gray-300 px-4 py-2 text-left">Orbits Completed</th>
                         <th className="border border-gray-300 px-4 py-2">Actions</th>
                     </tr>
                 </thead>
@@ -54,6 +55,7 @@ function FlightsTable({ flights }) {
                                     <td className="border border-gray-300 px-4 py-2">{flight.mission_type}</td>
                                     <td className="border border-gray-300 px-4 py-2">{flight.spacecraft}</td>
                                     <td className="border border-gray-300 px-4 py-2">{flight.launch_date}</td>
+                                    <td className="border border-gray-300 px-4 py-2">{flight.orbits_completed}</td>
                                     <td className="border border-gray-300 px-4 py-2 text-center space-x-1">
                                         <button onClick={ () => navigate(`/admin/flights/${flight._id}/details`) } className="bg-green-500 text-white px-2 py-1 text-sm rounded hover:bg-green-600">Details</button>                                        
                                         <button onClick={ () => navigate(`/admin/flights/${flight._id}/edit`) } className="bg-blue-500 text-white px-2 py-1 text-sm rounded hover:bg-blue-600">Edit</button>
