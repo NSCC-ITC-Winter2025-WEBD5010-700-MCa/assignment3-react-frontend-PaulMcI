@@ -9,7 +9,8 @@ function FlightsTable({ flights }) {
     const deleteFlightMutation = useMutation({
 
         mutationFn: async (flightId) => {
-            const response = await fetch(`http://localhost:3456/flights/${flightId}`, {
+            const response = await fetch(`${import.meta.env.VITE_FLIGHTS_API_URL}/${flightId}`, {
+            //const response = await fetch(`http://localhost:3456/flights/${flightId}`, {
                 method: "DELETE"
             });
             return response.json();
