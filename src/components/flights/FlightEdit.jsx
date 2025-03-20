@@ -38,7 +38,11 @@ function FlightEdit() {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(data)
+                 //body: JSON.stringify(data)
+                body: JSON.stringify({
+                    ...data,
+                    orbits_completed: Number(data.orbits_completed),
+                  }),               
             });
             return response.json();
         },

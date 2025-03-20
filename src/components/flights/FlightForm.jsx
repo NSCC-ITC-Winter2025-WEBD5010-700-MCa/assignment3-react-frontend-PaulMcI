@@ -21,7 +21,7 @@ export default function FlightForm({ onDataCollected, initialData }) {
             setValue('mission_type', initialData.mission_type);
             setValue('spacecraft', initialData.spacecraft);
             setValue('launch_date', initialData.launch_date);
-            //setValue('orbits_completed', initialData.orbits_completed);            
+            setValue('orbits_completed', initialData.orbits_completed);            
         }
     }, [initialData]);
 
@@ -59,14 +59,14 @@ export default function FlightForm({ onDataCollected, initialData }) {
                         className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
                     {errors.launch_date && <p className="text-red-500 text-sm mt-1">{errors.launch_date.message}</p>}
                 </div>
-                {/* <div>
+                <div>
                     <input
                         {...register('orbits_completed', { required: 'Orbits Completed is required!', min: { value: 0, message: 'Orbits Completed must equal to or greater than 0' } })}
                         type="number"
                         placeholder="Orbits Completed"
                         className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
                     {errors.orbits_completed && <p className="text-red-500 text-sm mt-1">{errors.orbits_completed.message}</p>}
-                </div> */}
+                </div>
                 <button
                     type="submit"
                     className="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-all">

@@ -1688,46 +1688,11 @@
       }
     },
     {
-      "id": "45",
       "title": "In the Heart of the Storm",
       "author": "Christopher Young",
-      "published_year": 1901,
+      "published_year": "2000",
       "genre": "Fiction",
-      "isbn": "9672865916875",
-      "ratings": [
-        5,
-        2
-      ],
-      "reviews": [
-        {
-          "user": "Charles Murphy",
-          "comment": "This is a review for Beneath the Surface.",
-          "rating": 4,
-          "date": "1-4-2021"
-        },
-        {
-          "user": "Maria Harris",
-          "comment": "This is a review for A Thousand Dreams.",
-          "rating": 2,
-          "date": "15-12-2022"
-        }
-      ],
-      "publisher": {
-        "name": "Penguin Random House",
-        "address": {
-          "street": "438 Pine Rd",
-          "city": "Paris",
-          "country": "France"
-        },
-        "contact": {
-          "phone": "+1-497-2186630",
-          "email": "contact@macmillan.com"
-        }
-      },
-      "price": {
-        "currency": "GBP",
-        "amount": 12.15
-      }
+      "id": "45"
     },
     {
       "id": "46",

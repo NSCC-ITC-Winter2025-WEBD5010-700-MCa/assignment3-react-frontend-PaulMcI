@@ -37,6 +37,7 @@ function FlightDetails() {
             <h3 className="text-2xl font-bold mb-4 text-gray-800">Mission Type: {data?.mission_type}</h3>
             <h3 className="text-2xl font-bold mb-4 text-gray-800">Spacecraft: {data?.spacecraft}</h3>
             <h3 className="text-2xl font-bold mb-4 text-gray-800">Launch Date: {data?.launch_date}</h3>
+            <h3 className="text-2xl font-bold mb-4 text-gray-800">Orbits Completed: {data?.orbits_completed}</h3>
         </div>
 
     );
